@@ -25,3 +25,27 @@ nsp check
 - webpack dev server
 - [browsersync](https://www.browsersync.io/)
 
+**sharing local projects:**
+- [localtunnel](https://localtunnel.github.io/www/)
+- [ngrok](https://ngrok.com/)
+- Surge
+- now
+```
+npm install localtunnel -g
+node buildScripts/srcServer.js
+lt --port 3000
+lt --port 3000 --subdomain klymchuk
+```
+
+**task runners:**
+- [grunt](https://gruntjs.com/)
+- [gulp](http://gulpjs.com/)
+- [npm scripts](https://docs.npmjs.com/misc/scripts)
+```
+ "scripts": {
+    "start": "node buildScripts/srcServer.js",
+ },
+  
+  npm run start
+  npm start -s
+```
