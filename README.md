@@ -49,3 +49,55 @@ lt --port 3000 --subdomain klymchuk
   npm run start
   npm start -s
 ```
+
+**transpilers:**
+- [babel](https://babeljs.io/)
+- [typeScript](https://www.typescriptlang.org/)
+- elm
+
+_.babelrc_
+```
+{
+  "presets": [
+    "latest"
+  ]
+}
+```
+_package.json_
+```
+ "devDependencies": {
+    "babel-cli": "6.16.0",
+    "babel-core": "6.17.0",
+    "babel-loader": "6.2.5",
+    "babel-preset-latest": "6.16.0",
+    "babel-register": "6.16.3",
+    .....
+ ```
+ after that we can use es6 syntax:
+ ```
+ //--es5
+var express = require('express');
+var path = require('path');
+var open = require('open');
+var port = 3000;
+var app = express();
+
+//es6 from babel
+import express from 'express';
+import path from 'path';
+import open from 'open';
+const port = 3000;
+const app = express();
+```
+ 
+for using es6 syntax we need to use **babel-node** instead of **node**
+```
+  "scripts": {
+    "prestart": "babel-node buildScripts/startMessage.js",
+```
+
+**bundlers:**
+- [browserify](http://browserify.org/)
+- [webpack](https://webpack.github.io/docs/)
+- [rollup](https://rollupjs.org/)
+- [JSPM](http://jspm.io/)
